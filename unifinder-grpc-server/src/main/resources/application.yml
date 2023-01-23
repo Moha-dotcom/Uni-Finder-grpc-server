@@ -1,0 +1,6 @@
+grpc:
+  server:
+    port: 8000
+
+open-data-maker-api: "&api_key=QVt5P61BxWdzDPdPwZH0xHUifcy041RmiMU4YNIh"
+uniFinder-api : "https://7kbs42o9td.execute-api.us-east-1.amazonaws.com/institution/"

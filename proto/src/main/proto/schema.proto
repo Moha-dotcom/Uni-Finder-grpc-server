@@ -1,0 +1,62 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_outer_classname = "UniversityInfoProtos";
+package com.devProblems;
+
+message StudentInfo {
+  int32 institutionId = 1;
+  bool studentTransferStatus = 2;
+  double studentGpa = 3;
+  int32 studentReadingWritingScore = 4;
+  int32 studentMathScore = 5;
+}
+
+
+message AcceptanceDetail {
+  double acceptance_rate = 1;
+  string institution_name = 2;
+  string avg_gpa = 3;
+
+
+}
+
+
+message UniFinderResponse  {
+  string Message = 1;
+  AcceptanceDetail acceptanceDetail = 2;
+  Expense expense = 3;
+  repeated UniversityInfo universityInfo = 4;
+
+
+}
+
+message UniversityInfo {
+  double acceptance_rate = 1;
+  int32 act_25 = 2;
+  int32 sat_75 = 3;
+  int32 act_75 = 4;
+  string institution_name = 5;
+  double avg_gpa = 6;
+  int32 id = 7;
+  int32 sat_25 = 8;
+  string state = 9;
+
+}
+
+
+
+message Expense {
+
+  string yearly_tuition_in_state = 1;
+  string yearly_tuition_out_of_state = 2;
+  string yearly_onCampus_accommodation = 3;
+  string yearly_offCampus_accommodation = 4;
+  string school_url = 6;
+  string zip = 5;
+
+}
+
+
+service StudentService {
+  rpc  getUniversityDetail(StudentInfo) returns(UniFinderResponse){};
+}
